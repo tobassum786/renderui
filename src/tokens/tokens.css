@@ -1,0 +1,254 @@
+/**
+ * RenderUI Design Tokens
+ * ----------------------
+ * Layer 1: Primitives   --r-color-*, --r-font-*, --r-space-*, ...
+ * Layer 2: Semantic     --r-color-bg-canvas, --r-color-text-primary, ...
+ * Layer 3: Components   consume semantic tokens (see *.module.css)
+ *
+ * Consumers should ONLY reference semantic tokens; primitives exist so
+ * themes can be re-mapped without touching component code.
+ */
+
+:root {
+  /* ------------------------------------------------------------------ */
+  /* Primitives                                                          */
+  /* ------------------------------------------------------------------ */
+
+  /* Neutral (slate) */
+  --r-color-neutral-0: #ffffff;
+  --r-color-neutral-50: #f8fafc;
+  --r-color-neutral-100: #f1f5f9;
+  --r-color-neutral-200: #e2e8f0;
+  --r-color-neutral-300: #cbd5e1;
+  --r-color-neutral-400: #94a3b8;
+  --r-color-neutral-500: #64748b;
+  --r-color-neutral-600: #475569;
+  --r-color-neutral-700: #334155;
+  --r-color-neutral-800: #1e293b;
+  --r-color-neutral-900: #0f172a;
+  --r-color-neutral-950: #020617;
+
+  /* Brand (indigo) */
+  --r-color-brand-50: #eef2ff;
+  --r-color-brand-100: #e0e7ff;
+  --r-color-brand-200: #c7d2fe;
+  --r-color-brand-300: #a5b4fc;
+  --r-color-brand-400: #818cf8;
+  --r-color-brand-500: #6366f1;
+  --r-color-brand-600: #4f46e5;
+  --r-color-brand-700: #4338ca;
+  --r-color-brand-800: #3730a3;
+  --r-color-brand-900: #312e81;
+
+  /* Success (emerald) */
+  --r-color-success-50: #ecfdf5;
+  --r-color-success-100: #d1fae5;
+  --r-color-success-500: #10b981;
+  --r-color-success-600: #059669;
+  --r-color-success-700: #047857;
+
+  /* Warning (amber) */
+  --r-color-warning-50: #fffbeb;
+  --r-color-warning-100: #fef3c7;
+  --r-color-warning-500: #f59e0b;
+  --r-color-warning-600: #d97706;
+  --r-color-warning-700: #b45309;
+
+  /* Danger (red) */
+  --r-color-danger-50: #fef2f2;
+  --r-color-danger-100: #fee2e2;
+  --r-color-danger-500: #ef4444;
+  --r-color-danger-600: #dc2626;
+  --r-color-danger-700: #b91c1c;
+
+  /* Info (sky) */
+  --r-color-info-50: #f0f9ff;
+  --r-color-info-100: #e0f2fe;
+  --r-color-info-500: #0ea5e9;
+  --r-color-info-600: #0284c7;
+  --r-color-info-700: #0369a1;
+
+  /* Typography */
+  --r-font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --r-font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    monospace;
+
+  --r-font-size-xs: 0.75rem;
+  --r-font-size-sm: 0.875rem;
+  --r-font-size-md: 1rem;
+  --r-font-size-lg: 1.125rem;
+  --r-font-size-xl: 1.25rem;
+  --r-font-size-2xl: 1.5rem;
+  --r-font-size-3xl: 1.875rem;
+  --r-font-size-4xl: 2.25rem;
+
+  --r-font-weight-regular: 400;
+  --r-font-weight-medium: 500;
+  --r-font-weight-semibold: 600;
+  --r-font-weight-bold: 700;
+
+  --r-line-height-tight: 1.25;
+  --r-line-height-normal: 1.5;
+  --r-line-height-relaxed: 1.625;
+
+  /* Spacing (4px base grid) */
+  --r-space-0: 0;
+  --r-space-px: 1px;
+  --r-space-1: 0.25rem;
+  --r-space-2: 0.5rem;
+  --r-space-3: 0.75rem;
+  --r-space-4: 1rem;
+  --r-space-5: 1.25rem;
+  --r-space-6: 1.5rem;
+  --r-space-8: 2rem;
+  --r-space-10: 2.5rem;
+  --r-space-12: 3rem;
+  --r-space-16: 4rem;
+  --r-space-20: 5rem;
+  --r-space-24: 6rem;
+
+  /* Radii */
+  --r-radius-none: 0;
+  --r-radius-xs: 0.25rem;
+  --r-radius-sm: 0.375rem;
+  --r-radius-md: 0.5rem;
+  --r-radius-lg: 0.75rem;
+  --r-radius-xl: 1rem;
+  --r-radius-2xl: 1.5rem;
+  --r-radius-full: 9999px;
+
+  /* Shadows */
+  --r-shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --r-shadow-sm:
+    0 1px 3px 0 rgb(15 23 42 / 0.1), 0 1px 2px -1px rgb(15 23 42 / 0.1);
+  --r-shadow-md:
+    0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1);
+  --r-shadow-lg:
+    0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1);
+
+  /* Motion */
+  --r-duration-fast: 150ms;
+  --r-duration-base: 200ms;
+  --r-duration-slow: 320ms;
+  --r-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --r-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Z-index scale */
+  --r-z-dropdown: 1000;
+  --r-z-sticky: 1100;
+  --r-z-overlay: 1200;
+  --r-z-modal: 1300;
+  --r-z-toast: 1400;
+
+  /* ------------------------------------------------------------------ */
+  /* Semantic — Light theme (default)                                    */
+  /* ------------------------------------------------------------------ */
+
+  /* Surfaces */
+  --r-color-bg-canvas: var(--r-color-neutral-50);
+  --r-color-bg-surface: var(--r-color-neutral-0);
+  --r-color-bg-sunken: var(--r-color-neutral-100);
+  --r-color-bg-overlay: rgb(2 6 23 / 0.55);
+
+  /* Text */
+  --r-color-text-primary: var(--r-color-neutral-900);
+  --r-color-text-secondary: var(--r-color-neutral-600);
+  --r-color-text-muted: var(--r-color-neutral-400);
+  --r-color-text-on-brand: var(--r-color-neutral-0);
+
+  /* Borders */
+  --r-color-border-subtle: var(--r-color-neutral-200);
+  --r-color-border-strong: var(--r-color-neutral-300);
+  --r-color-focus-ring: var(--r-color-brand-500);
+
+  /* Interactive */
+  --r-color-accent: var(--r-color-brand-600);
+  --r-color-accent-hover: var(--r-color-brand-700);
+  --r-color-accent-active: var(--r-color-brand-800);
+  --r-color-accent-subtle: var(--r-color-brand-50);
+  --r-color-accent-subtle-hover: var(--r-color-brand-100);
+  --r-color-link: var(--r-color-brand-600);
+  --r-color-link-hover: var(--r-color-brand-700);
+
+  /* Status */
+  --r-color-success: var(--r-color-success-600);
+  --r-color-success-subtle: var(--r-color-success-50);
+  --r-color-warning: var(--r-color-warning-600);
+  --r-color-warning-subtle: var(--r-color-warning-50);
+  --r-color-danger: var(--r-color-danger-600);
+  --r-color-danger-subtle: var(--r-color-danger-50);
+  --r-color-info: var(--r-color-info-600);
+  --r-color-info-subtle: var(--r-color-info-50);
+}
+
+/* -------------------------------------------------------------------- */
+/* Dark theme                                                           */
+/* -------------------------------------------------------------------- */
+
+[data-theme='dark'] {
+  --r-color-bg-canvas: var(--r-color-neutral-950);
+  --r-color-bg-surface: var(--r-color-neutral-900);
+  --r-color-bg-sunken: var(--r-color-neutral-950);
+  --r-color-bg-overlay: rgb(0 0 0 / 0.65);
+
+  --r-color-text-primary: var(--r-color-neutral-50);
+  --r-color-text-secondary: var(--r-color-neutral-400);
+  --r-color-text-muted: var(--r-color-neutral-500);
+  --r-color-text-on-brand: var(--r-color-neutral-0);
+
+  --r-color-border-subtle: var(--r-color-neutral-800);
+  --r-color-border-strong: var(--r-color-neutral-700);
+  --r-color-focus-ring: var(--r-color-brand-400);
+
+  --r-color-accent: var(--r-color-brand-500);
+  --r-color-accent-hover: var(--r-color-brand-400);
+  --r-color-accent-active: var(--r-color-brand-300);
+  --r-color-accent-subtle: color-mix(
+    in srgb,
+    var(--r-color-brand-500) 16%,
+    transparent
+  );
+  --r-color-accent-subtle-hover: color-mix(
+    in srgb,
+    var(--r-color-brand-500) 24%,
+    transparent
+  );
+  --r-color-link: var(--r-color-brand-400);
+  --r-color-link-hover: var(--r-color-brand-300);
+
+  --r-color-success: var(--r-color-success-500);
+  --r-color-success-subtle: color-mix(
+    in srgb,
+    var(--r-color-success-500) 14%,
+    transparent
+  );
+  --r-color-warning: var(--r-color-warning-500);
+  --r-color-warning-subtle: color-mix(
+    in srgb,
+    var(--r-color-warning-500) 14%,
+    transparent
+  );
+  --r-color-danger: var(--r-color-danger-500);
+  --r-color-danger-subtle: color-mix(
+    in srgb,
+    var(--r-color-danger-500) 14%,
+    transparent
+  );
+  --r-color-info: var(--r-color-info-500);
+  --r-color-info-subtle: color-mix(
+    in srgb,
+    var(--r-color-info-500) 14%,
+    transparent
+  );
+
+  --r-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --r-shadow-sm:
+    0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.5);
+  --r-shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --r-shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.55), 0 4px 6px -4px rgb(0 0 0 / 0.55);
+}

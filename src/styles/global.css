@@ -1,0 +1,52 @@
+/**
+ * Global entry stylesheet for consumers:
+ *   import 'renderui/styles.css'
+ * or import this file directly from source.
+ */
+
+@import '../tokens/tokens.css';
+@import './reset.css';
+
+:root {
+  font-family: var(--r-font-sans);
+  font-size: 16px;
+  color: var(--r-color-text-primary);
+  background-color: var(--r-color-bg-canvas);
+}
+
+body {
+  background-color: var(--r-color-bg-canvas);
+  color: var(--r-color-text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--r-color-focus-ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--r-color-focus-ring) 30%, transparent);
+}
+
+.r-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
