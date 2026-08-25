@@ -27,6 +27,7 @@
     "tests/**/*.ts",
     "playground/**/*.ts",
     "playground/**/*.vue",
+    "docs/.vitepress/theme/**/*.ts",
     "vite.config.ts",
     "playground/vite.config.ts",
     "vitest.config.ts"

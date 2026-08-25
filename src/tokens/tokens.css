@@ -186,9 +186,12 @@
 
 /* -------------------------------------------------------------------- */
 /* Dark theme                                                           */
+/* `[data-theme]` is set by useTheme(); `.dark` keeps VitePress and      */
+/* other class-based theming systems in sync.                           */
 /* -------------------------------------------------------------------- */
 
-[data-theme='dark'] {
+[data-theme='dark'],
+.dark {
   --r-color-bg-canvas: var(--r-color-neutral-950);
   --r-color-bg-surface: var(--r-color-neutral-900);
   --r-color-bg-sunken: var(--r-color-neutral-950);

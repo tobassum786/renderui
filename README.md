@@ -1,8 +1,10 @@
 # RenderUI
 
 A themeable Vue 3 design system built on **design tokens**, **CSS Modules** and
-**TypeScript**. Zero runtime dependencies beyond Vue itself (~7 kB gzipped JS,
-4.6 kB CSS for all ten components).
+**TypeScript**. Zero runtime dependencies beyond Vue itself (~7 kB gzipped JS
+for all sixteen components).
+
+**[Read the documentation →](https://tobassum786.github.io/renderui/)**
 
 ## Architecture
 
@@ -66,21 +68,17 @@ import { RButton, useTheme } from 'renderui'
 
 ## Components
 
-| Component    | Highlights                                                            |
-| ------------ | --------------------------------------------------------------------- |
-| `RButton`    | 4 variants × 3 sizes, loading state, icon slots, block mode           |
-| `RInput`     | label/hint/error wiring, `aria-invalid` + `aria-describedby`, sizes    |
-| `RTextarea`  | same semantics as input, resize modes                                 |
-| `RCard`      | header/body/footer slots, hoverable & flat modes                      |
-| `RBadge`     | status variants, dot indicator                                        |
-| `RAlert`     | role="alert", iconography, dismissible                                |
-| `RModal`     | Teleport, focus restore, Esc/backdrop close, scroll lock, transitions |
-| `RSwitch`    | `role="switch"` + `aria-checked`, keyboard operable                   |
-| `RSpinner`   | currentColor-driven, `role="status"` announcement                     |
-| `RAvatar`    | image → initials → icon fallback chain                                |
+| General     | Form Controls        | Feedback            | Navigation & Overlay |
+| ----------- | -------------------- | ------------------- | -------------------- |
+| Button      | Input                | Alert               | Tabs                 |
+| Card        | Textarea             | Modal               | Tooltip              |
+| Badge       | Select               | Spinner             |                      |
+| Avatar      | Checkbox             | Progress            |                      |
+|             | Switch               | Skeleton            |                      |
 
 All interactive components are focus-visible styled, ARIA-labelled and respect
-`prefers-reduced-motion` globally.
+`prefers-reduced-motion` globally. Full props/events/overrides reference lives
+in the [docs](https://tobassum786.github.io/renderui/).
 
 ## Theming
 
@@ -95,15 +93,16 @@ Dark values re-map semantic tokens only — components never change.
 ## Project structure
 
 ```
-src/
+src/           library source
   tokens/       tokens.css (3 layers), tokens.ts (TS mirror)
   styles/       reset.css, global.css (consumer entry)
   components/   <RName>/{RName.vue,index.ts}  (+ barrel)
   composables/  use-theme.ts
   utils/        class-names.ts, with-install.ts
   index.ts      public API + plugin installer
-playground/     showcase dev app (npm run dev)
-tests/          vitest unit tests
+docs/          VitePress documentation site (npm run docs:dev)
+playground/    showcase dev app (npm run dev)
+tests/         vitest unit tests
 ```
 
 ## Roadmap
