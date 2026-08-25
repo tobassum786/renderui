@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useCssModule } from 'vue'
+import { computed, useCssModule, useId } from 'vue'
 import { cn } from '../../utils/class-names'
 
 export interface RTooltipProps {
@@ -15,7 +15,8 @@ const props = withDefaults(defineProps<RTooltipProps>(), {
 defineOptions({ name: 'RTooltip' })
 
 const s = useCssModule()
-const tooltipId = `r-tooltip-${Math.random().toString(36).slice(2, 9)}`
+const uid = useId()
+const tooltipId = `r-tooltip-${uid}`
 
 const classes = computed(() => cn(s.tip, s[props.placement]))
 </script>
