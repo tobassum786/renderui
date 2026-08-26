@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, computed } from 'vue'
 import {
   useTheme,
@@ -538,60 +538,6 @@ import 'renderui/styles.css'</code></pre>
     </main>
   </div>
 </template>
-
-<script setup>
-// Theme customization functions
-const setCustomTheme = (color: string) => {
-  const themes: Record<string, Record<string, string>> = {
-    indigo: {
-      '--r-color-brand-50': '#eef2ff',
-      '--r-color-brand-100': '#e0e7ff',
-      '--r-color-brand-200': '#c7d2fe',
-      '--r-color-brand-300': '#a5b4fc',
-      '--r-color-brand-400': '#818cf8',
-      '--r-color-brand-500': '#6366f1',
-      '--r-color-brand-600': '#4f46e5',
-      '--r-color-brand-700': '#4338ca',
-      '--r-color-brand-800': '#3730a3',
-      '--r-color-brand-900': '#312e81',
-    },
-    emerald: {
-      '--r-color-brand-50': '#ecfdf5',
-      '--r-color-brand-100': '#d1fae5',
-      '--r-color-brand-200': '#a7f3d0',
-      '--r-color-brand-300': '#6ee7b7',
-      '--r-color-brand-400': '#34d399',
-      '--r-color-brand-500': '#10b981',
-      '--r-color-brand-600': '#059669',
-      '--r-color-brand-700': '#047857',
-      '--r-color-brand-800': '#065f46',
-      '--r-color-brand-900': '#064e3b',
-    },
-    violet: {
-      '--r-color-brand-50': '#f5f3ff',
-      '--r-color-brand-100': '#ede9fe',
-      '--r-color-brand-200': '#ddd6fe',
-      '--r-color-brand-300': '#c4b5fd',
-      '--r-color-brand-400': '#a78bfa',
-      '--r-color-brand-500': '#8b5cf6',
-      '--r-color-brand-600': '#7c3aed',
-      '--r-color-brand-700': '#6d28d9',
-      '--r-color-brand-800': '#5b21b6',
-      '--r-color-brand-900': '#4c1d95',
-    },
-    rose: {
-      '--r-color-brand-50': '#fff1f2',
-      '--r-color-brand-100': '#ffe4e6',
-      '--r-color-brand-200': '#fecdd3',
-      '--r-color-brand-300': '#fda4af',
-      '--r-color-brand-400': '#fb7185',
-      '--r-color-brand-500': '#f43f5e',
-      '--r-color-brand-600': '#e11d48',
-      '--r-color-brand-700': '#be123c',
-      '--r-color-brand-800': '#9f1239',
-      '--r-color-brand-900': '#881337',
-    },
-    amber: {
       '--r-color-brand-50': '#fffbeb',
       '--r-color-brand-100': '#fef3c7',
       '--r-color-brand-200': '#fde68a',
