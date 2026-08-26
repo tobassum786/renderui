@@ -538,36 +538,6 @@ import 'renderui/styles.css'</code></pre>
     </main>
   </div>
 </template>
-      '--r-color-brand-50': '#fffbeb',
-      '--r-color-brand-100': '#fef3c7',
-      '--r-color-brand-200': '#fde68a',
-      '--r-color-brand-300': '#fcd34d',
-      '--r-color-brand-400': '#fbbf24',
-      '--r-color-brand-500': '#f59e0b',
-      '--r-color-brand-600': '#d97706',
-      '--r-color-brand-700': '#b45309',
-      '--r-color-brand-800': '#92400e',
-      '--r-color-brand-900': '#78350f',
-    }
-  }
-
-  const root = document.documentElement
-  Object.entries(themes[color]).forEach(([key, value]) => {
-    root.style.setProperty(key, value)
-  })
-}
-
-const resetCustomTheme = () => {
-  const root = document.documentElement
-  const keys = [
-    '--r-color-brand-50', '--r-color-brand-100', '--r-color-brand-200',
-    '--r-color-brand-300', '--r-color-brand-400', '--r-color-brand-500',
-    '--r-color-brand-600', '--r-color-brand-700', '--r-color-brand-800',
-    '--r-color-brand-900'
-  ]
-  keys.forEach(key => root.style.removeProperty(key))
-}
-</script>
 
 <style scoped>
 .page {
