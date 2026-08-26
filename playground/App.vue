@@ -568,37 +568,37 @@ import 'renderui/styles.css'</code></pre>
         <div class="docs-section">
           <h4 class="docs-section-title">Getting Started</h4>
           <ul class="docs-links">
-            <li><a href="/guide/getting-started" target="_blank" rel="noopener">Installation & Quick Start</a></li>
-            <li><a href="/guide/theming" target="_blank" rel="noopener">Theming & Tokens</a></li>
-            <li><a href="/guide/integrations" target="_blank" rel="noopener">Framework Integrations</a></li>
-            <li><a href="/guide/migration" target="_blank" rel="noopener">Migration Guide</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/guide/getting-started" target="_blank" rel="noopener">Installation & Quick Start</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/guide/theming" target="_blank" rel="noopener">Theming & Tokens</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/guide/integrations" target="_blank" rel="noopener">Framework Integrations</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/guide/migration" target="_blank" rel="noopener">Migration Guide</a></li>
           </ul>
         </div>
         <div class="docs-section">
           <h4 class="docs-section-title">Components</h4>
           <ul class="docs-links">
-            <li><a href="/components/button" target="_blank" rel="noopener">Button</a></li>
-            <li><a href="/components/card" target="_blank" rel="noopener">Card</a></li>
-            <li><a href="/components/badge" target="_blank" rel="noopener">Badge</a></li>
-            <li><a href="/components/avatar" target="_blank" rel="noopener">Avatar</a></li>
-            <li><a href="/components/input" target="_blank" rel="noopener">Input</a></li>
-            <li><a href="/components/textarea" target="_blank" rel="noopener">Textarea</a></li>
-            <li><a href="/components/select" target="_blank" rel="noopener">Select</a></li>
-            <li><a href="/components/checkbox" target="_blank" rel="noopener">Checkbox</a></li>
-            <li><a href="/components/switch" target="_blank" rel="noopener">Switch</a></li>
-            <li><a href="/components/alert" target="_blank" rel="noopener">Alert</a></li>
-            <li><a href="/components/modal" target="_blank" rel="noopener">Modal</a></li>
-            <li><a href="/components/spinner" target="_blank" rel="noopener">Spinner</a></li>
-            <li><a href="/components/progress" target="_blank" rel="noopener">Progress</a></li>
-            <li><a href="/components/skeleton" target="_blank" rel="noopener">Skeleton</a></li>
-            <li><a href="/components/tabs" target="_blank" rel="noopener">Tabs</a></li>
-            <li><a href="/components/tooltip" target="_blank" rel="noopener">Tooltip</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/button" target="_blank" rel="noopener">Button</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/card" target="_blank" rel="noopener">Card</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/badge" target="_blank" rel="noopener">Badge</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/avatar" target="_blank" rel="noopener">Avatar</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/input" target="_blank" rel="noopener">Input</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/textarea" target="_blank" rel="noopener">Textarea</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/select" target="_blank" rel="noopener">Select</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/checkbox" target="_blank" rel="noopener">Checkbox</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/switch" target="_blank" rel="noopener">Switch</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/alert" target="_blank" rel="noopener">Alert</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/modal" target="_blank" rel="noopener">Modal</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/spinner" target="_blank" rel="noopener">Spinner</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/progress" target="_blank" rel="noopener">Progress</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/skeleton" target="_blank" rel="noopener">Skeleton</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/tabs" target="_blank" rel="noopener">Tabs</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/components/tooltip" target="_blank" rel="noopener">Tooltip</a></li>
           </ul>
         </div>
         <div class="docs-section">
           <h4 class="docs-section-title">Reference</h4>
           <ul class="docs-links">
-            <li><a href="/reference/api" target="_blank" rel="noopener">API Reference</a></li>
+            <li><a href="https://tobassum786.github.io/renderui/reference/api" target="_blank" rel="noopener">API Reference</a></li>
           </ul>
         </div>
       </nav>
