@@ -27,6 +27,7 @@ const modalOpen = ref(false)
 const formModalOpen = ref(false)
 const deleteModalOpen = ref(false)
 const asyncModalOpen = ref(false)
+const showDocs = ref(false)
 
 // Form states
 const switchOn = ref(true)
@@ -205,6 +206,12 @@ const resetCustomTheme = () => {
         ]" placeholder="Theme" class="theme-select" />
         <RButton variant="secondary" @click="toggleTheme">
           Toggle
+        </RButton>
+        <RButton variant="ghost" @click="showDocs = true">
+          <template #icon>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </template>
+          Docs
         </RButton>
       </div>
     </header>
@@ -537,6 +544,72 @@ import 'renderui/styles.css'</code></pre>
       </section>
     </main>
   </div>
+
+  <!-- Documentation Modal -->
+  <RModal v-model="showDocs" title="Documentation" size="lg" :hide-close="true">
+    <template #header>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold">RenderUI Documentation</h3>
+            <p class="text-sm text-muted-color">Complete guides, API reference & examples</p>
+          </div>
+        </div>
+        <a href="https://github.com/tobassum786/renderui" target="_blank" rel="noopener" class="text-muted-color hover:text-primary transition-colors" title="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </template>
+    <div class="docs-content">
+      <nav class="docs-nav">
+        <div class="docs-section">
+          <h4 class="docs-section-title">Getting Started</h4>
+          <ul class="docs-links">
+            <li><a href="/guide/getting-started" target="_blank" rel="noopener">Installation & Quick Start</a></li>
+            <li><a href="/guide/theming" target="_blank" rel="noopener">Theming & Tokens</a></li>
+            <li><a href="/guide/integrations" target="_blank" rel="noopener">Framework Integrations</a></li>
+            <li><a href="/guide/migration" target="_blank" rel="noopener">Migration Guide</a></li>
+          </ul>
+        </div>
+        <div class="docs-section">
+          <h4 class="docs-section-title">Components</h4>
+          <ul class="docs-links">
+            <li><a href="/components/button" target="_blank" rel="noopener">Button</a></li>
+            <li><a href="/components/card" target="_blank" rel="noopener">Card</a></li>
+            <li><a href="/components/badge" target="_blank" rel="noopener">Badge</a></li>
+            <li><a href="/components/avatar" target="_blank" rel="noopener">Avatar</a></li>
+            <li><a href="/components/input" target="_blank" rel="noopener">Input</a></li>
+            <li><a href="/components/textarea" target="_blank" rel="noopener">Textarea</a></li>
+            <li><a href="/components/select" target="_blank" rel="noopener">Select</a></li>
+            <li><a href="/components/checkbox" target="_blank" rel="noopener">Checkbox</a></li>
+            <li><a href="/components/switch" target="_blank" rel="noopener">Switch</a></li>
+            <li><a href="/components/alert" target="_blank" rel="noopener">Alert</a></li>
+            <li><a href="/components/modal" target="_blank" rel="noopener">Modal</a></li>
+            <li><a href="/components/spinner" target="_blank" rel="noopener">Spinner</a></li>
+            <li><a href="/components/progress" target="_blank" rel="noopener">Progress</a></li>
+            <li><a href="/components/skeleton" target="_blank" rel="noopener">Skeleton</a></li>
+            <li><a href="/components/tabs" target="_blank" rel="noopener">Tabs</a></li>
+            <li><a href="/components/tooltip" target="_blank" rel="noopener">Tooltip</a></li>
+          </ul>
+        </div>
+        <div class="docs-section">
+          <h4 class="docs-section-title">Reference</h4>
+          <ul class="docs-links">
+            <li><a href="/reference/api" target="_blank" rel="noopener">API Reference</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="docs-actions">
+        <RButton variant="secondary" @click="showDocs = false">Close</RButton>
+        <a href="https://tobassum786.github.io/renderui/" target="_blank" rel="noopener">
+          <RButton>Open Full Docs Site</RButton>
+        </a>
+      </div>
+    </div>
+  </RModal>
 </template>
 
 <style scoped>
@@ -727,5 +800,57 @@ import 'renderui/styles.css'</code></pre>
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+
+.docs-content {
+  padding: var(--r-space-2) 0;
+}
+
+.docs-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--r-space-6);
+  margin-bottom: var(--r-space-6);
+}
+
+.docs-section-title {
+  font-size: var(--r-font-size-sm);
+  font-weight: var(--r-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--r-color-text-muted);
+  margin-bottom: var(--r-space-3);
+}
+
+.docs-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--r-space-2);
+}
+
+.docs-links a {
+  display: block;
+  padding: var(--r-space-2) var(--r-space-3);
+  border-radius: var(--r-radius-md);
+  color: var(--r-color-text-secondary);
+  text-decoration: none;
+  font-size: var(--r-font-size-sm);
+  transition: background-color var(--r-duration-fast) var(--r-ease-out), color var(--r-duration-fast) var(--r-ease-out);
+}
+
+.docs-links a:hover {
+  background: var(--r-color-bg-sunken);
+  color: var(--r-color-text-primary);
+}
+
+.docs-actions {
+  display: flex;
+  gap: var(--r-space-3);
+  justify-content: flex-end;
+  padding-top: var(--r-space-4);
+  border-top: 1px solid var(--r-color-border-subtle);
 }
 </style>
