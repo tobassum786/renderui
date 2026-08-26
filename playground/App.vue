@@ -63,22 +63,22 @@ const countryOptions = [
 ]
 
 // Simulate progress
-let progressTimer: number
+const progressTimer = ref<number | null>(null)
 const startProgress = () => {
   progress.value = 0
-  progressTimer = window.setInterval(() => {
+  progressTimer.value = window.setInterval(() => {
     progress.value = Math.min(100, progress.value + Math.random() * 15)
-    if (progress.value >= 100) clearInterval(progressTimer)
+    if (progress.value >= 100 && progressTimer.value) clearInterval(progressTimer.value)
   }, 300)
 }
 
 // Simulate upload
-let uploadTimer: number
+const uploadTimer = ref<number | null>(null)
 const startUpload = () => {
   uploadProgress.value = 0
-  uploadTimer = window.setInterval(() => {
+  uploadTimer.value = window.setInterval(() => {
     uploadProgress.value = Math.min(100, uploadProgress.value + Math.random() * 10)
-    if (uploadProgress.value >= 100) clearInterval(uploadTimer)
+    if (uploadProgress.value >= 100 && uploadTimer.value) clearInterval(uploadTimer.value)
   }, 200)
 }
 
