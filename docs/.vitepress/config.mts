@@ -11,6 +11,7 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
       { text: 'Components', link: '/components/button', activeMatch: '/components/' },
+      { text: 'Reference', link: '/reference/api', activeMatch: '/reference/' },
       { text: 'Playground', link: 'https://github.com/tobassum786/renderui' },
     ],
     sidebar: {
@@ -20,6 +21,16 @@ export default defineConfig({
           items: [
             { text: 'Getting Started', link: '/guide/getting-started' },
             { text: 'Theming & Tokens', link: '/guide/theming' },
+            { text: 'Framework Integrations', link: '/guide/integrations' },
+            { text: 'Migration Guide', link: '/guide/migration' },
+          ],
+        },
+      ],
+      '/reference/': [
+        {
+          text: 'Reference',
+          items: [
+            { text: 'API Reference', link: '/reference/api' },
           ],
         },
       ],

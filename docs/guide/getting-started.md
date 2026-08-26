@@ -1,59 +1,171 @@
 # Getting Started
 
-RenderUI is a component library and token system for Vue 3 applications.
+RenderUI is a **themeable Vue 3 design system** built on design tokens, CSS Modules, and TypeScript. Zero runtime dependencies beyond Vue itself (~10 kB gzipped JS for all 16 components).
 
 ## Installation
 
 ```bash
+# npm
 npm install renderui
+
+# pnpm
+pnpm add renderui
+
+# yarn
+yarn add renderui
 ```
 
-Vue 3.5+ is the only peer dependency.
-
-## Quick start
-
-Register everything globally and load the stylesheet once:
+## Quick Start
 
 ```ts
+// main.ts
 import { createApp } from 'vue'
 import { RenderUI } from 'renderui'
 import 'renderui/styles.css'
 
+import App from './App.vue'
+
 createApp(App).use(RenderUI).mount('#app')
 ```
 
-```vue-html
-<RButton>Ship it</RButton>
+```vue
+<!-- App.vue -->
+<script setup>
+import { RButton, RCard, RInput } from 'renderui'
+</script>
+
+<template>
+  <RCard title="Welcome" hoverable>
+    <RInput label="Email" placeholder="you@example.com" />
+    <RButton block class="mt-4">Get Started</RButton>
+  </RCard>
+</template>
 ```
 
-### Tree-shakeable usage
+## Cherry-picking (Tree-shakeable)
 
-Every component is also a named export with its own `install`, so bundles only
-pay for what you import:
+Import only what you need — unused components are eliminated by your bundler:
 
 ```ts
-import { RButton, RInput } from 'renderui'
+import { RButton, RModal, useTheme } from 'renderui'
+import 'renderui/styles.css' // still required once
+```
+
+## Vite / Nuxt / Astro Setup
+
+### Vite (vanilla)
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "renderui/styles.css" as *;`
+      }
+    }
+  }
+})
+```
+
+### Nuxt 3
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/vite'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "renderui/styles.css" as *;`
+        }
+      }
+    }
+  }
+})
+```
+
+```vue
+<!-- app.vue -->
+<script setup>
+import { RButton } from 'renderui'
+</script>
+
+<template>
+  <RButton>Nuxt + RenderUI</RButton>
+</template>
+```
+
+### Astro
+
+```astro
+---
+// components/RenderUIButton.astro
+import { RButton } from 'renderui'
 import 'renderui/styles.css'
+---
+
+<RButton client:visible>Astro + RenderUI</RButton>
 ```
 
-## Dark mode
+### Laravel + Vite
 
-Call `useTheme()` once anywhere — it applies `data-theme` to `<html>` and
-persists the choice:
+```js
+// vite.config.js
+import { defineConfig } from 'vite'
+import laravel from 'laravel-vite-plugin'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [
+    laravel({ input: 'resources/css/app.css', refresh: true }),
+    vue()
+  ]
+})
+```
+
+```js
+// resources/js/app.js
+import { createApp } from 'vue'
+import { RenderUI } from 'renderui'
+import 'renderui/styles.css'
+import App from './App.vue'
+
+createApp(App).use(RenderUI).mount('#app')
+```
+
+## TypeScript
+
+RenderUI ships with first-class TypeScript support. All component props, events, and slots are typed.
 
 ```ts
-import { useTheme } from 'renderui'
+import type { RButtonProps, RInputProps } from 'renderui'
 
-const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme()
-
-setTheme('dark') // 'light' | 'dark' | 'system'
+const buttonProps: RButtonProps = {
+  variant: 'primary',
+  size: 'lg',
+  loading: false
+}
 ```
 
-The docs site you are reading uses it — try the toggle in the navbar.
+## Browser Support
 
-## What's inside
+| Browser | Version |
+|---------|---------|
+| Chrome  | 90+     |
+| Firefox | 88+     |
+| Safari  | 14+     |
+| Edge    | 90+     |
 
-- **16 components** across general, form, feedback and navigation categories
-- **Design tokens** for color, type, spacing, radius, shadow, motion and z-index
-- **TypeScript** types for every prop and event
-- **51 unit tests** guarding behavior and accessibility contracts
+Requires CSS Custom Properties and `:focus-visible` support.
+
+## Next Steps
+
+- [Theming & Tokens](/guide/theming) — customize colors, spacing, radii
+- [Components](/components/button) — browse all 16 components
+- [Integration Guides](/guide/integrations) — framework-specific setup

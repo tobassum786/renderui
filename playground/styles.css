@@ -1,0 +1,72 @@
+/* Playground global styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--r-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--r-color-bg-canvas);
+  color: var(--r-color-text-primary);
+  line-height: var(--r-line-height-normal);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--r-color-bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--r-color-neutral-300);
+  border-radius: var(--r-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--r-color-neutral-400);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--r-color-neutral-700);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--r-color-neutral-600);
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in srgb, var(--r-color-brand-500) 30%, transparent);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--r-color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

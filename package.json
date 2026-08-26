@@ -1,5 +1,5 @@
 {
-  "name": "renderui",
+  "name": "@tobassum/renderui",
   "version": "0.1.0",
   "description": "A themeable Vue 3 design system: design tokens, accessible components, dark mode.",
   "type": "module",
