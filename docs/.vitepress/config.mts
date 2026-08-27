@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/docs/',
   title: 'RenderUI',
   description:
     'A themeable Vue 3 design system: design tokens, accessible components, dark mode.',
